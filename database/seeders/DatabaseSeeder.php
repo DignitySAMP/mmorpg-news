@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
 
         for ($i=0; $i < 256; $i++) { 
             ArticleImage::factory()->create([
-                'article_id' => User::inRandomOrder()->first()
+                'article_id' => Article::inRandomOrder()->first()
             ]);
         }
     }
