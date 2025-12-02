@@ -15,11 +15,14 @@ class Article extends Model
 
     protected $fillable = ['user_id', 'title', 'content', 'banner'];
 
-    public function author(): BelongsTo {
+    public function user(): BelongsTo {
         return $this->belongsTo(User::class);
     }
 
     public function images(): HasMany {
         return $this->hasMany(ArticleImage::class);
+    }
+    public function comments(): HasMany {
+        return $this->hasMany(ArticleComment::class);
     }
 }
