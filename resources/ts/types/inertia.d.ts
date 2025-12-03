@@ -1,11 +1,8 @@
-import type { PageProps as InertiaPageProps } from '@inertiajs/core';
-
-export type PageProps<
-    TProps extends Record<string, unknown> | unknown[] =
-        | Record<string, unknown>
-        | unknown[],
-> = App.Data.InertiaSharedData & TProps;
+import type { Page } from '@inertiajs/core';
+import { User } from '@/types/user';
 
 declare module '@inertiajs/core' {
-    interface PageProps extends InertiaPageProps, AppPageProps {}
+    interface PageProps extends Page<PageProps> {
+        auth: User | null
+    }
 }
