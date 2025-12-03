@@ -18,22 +18,14 @@ class ArticleController extends Controller
 
     public function index(Request $request): Response
     {
+        // filter variables
         $sortBy = $request->input('sort_by', 'newest');
         $perPage = $request->input('per_page', 15);
         $search = $request->input('search', '');
 
         // eager load all relationships, make sure to only load necessary variables
         $query = Article::query()
-            ->with([
-                'user:id,name,email', // user relation
-                'images:id,article_id,name,description,image', // article_image relation
-                'comments' => function ($query) { // article_comments relation
-                    $query->select('id', 'article_id', 'user_id', 'text', 'created_at')
-                          ->with('author:id,name') // article_comments.author relation
-                          ->latest()
-                          ->paginate(10); // TODO: comment pagination
-                },
-            ])
+            ->with([ 'user:id,name,email' ])  // user relation
             ->withCount('comments'); // only add full comment count 
 
         // apply search text and sorting parameters
@@ -69,7 +61,9 @@ class ArticleController extends Controller
 
     public function show(Article $article): Response
     {
-        $article->load(['user', 'comments.author', 'images']);
+        // TODO: improve loading here, improve comment relationship inclusion, ...
+        // //'images:id,article_id,name,description,image', // article_image relation
+        $article->load(['user', 'comments.author', 'comments.text', 'comments.created_at', 'images']);
 
         return Inertia::render('Article/Show', [
             'article' => array_merge($article->toArray(), [
