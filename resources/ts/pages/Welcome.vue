@@ -1,11 +1,23 @@
 <template>
-    <main>
-        <select v-model="sortBy">
-            <option v-for="options in sort_options" :value="options.value" v-html="options.label"/>
-        </select>
-        <input type="text" v-model="search" placeholder="Enter title or description here"/>
-        <input type="range" min="5" :max="articles.total" v-model="perPage"/>
-        <div class="grid grid-cols-4 gap-4">
+    <AppTempLayout>
+        <div class="flex gap-4 justify-evenly p-4">
+            <select class="bg-white px-4 py-2 rounded shadow w-full" v-model="sortBy">
+                <option v-for="options in sort_options" :value="options.value" v-html="options.label"/>
+            </select>
+            <input class="bg-white px-4 py-2 rounded shadow w-full" type="text" v-model="search" placeholder="Enter title or description here"/>
+            
+            <div class="flex flex-col w-full">
+                <div class="w-full flex gap-2 items-center">
+                    <span class="text-sm">5</span>
+                    <input class="w-full" type="range" min="5" :max="articles.total" v-model="perPage"/>
+                    <span class="text-sm">{{ articles.total }}</span>
+                </div>
+                <span class="text-center">
+                    {{ perPage }} articles shown
+                </span>
+            </div>
+        </div>
+        <div class="p-4 grid grid-cols-3 gap-4">
             <div v-for="article in articles.data">
                 <img v-if="article.banner" :src="article.banner"/>
                 <span class="font-bold">{{ article.title }}</span>
@@ -19,7 +31,7 @@
             </div>
 
         </div>
-    </main>
+    </AppTempLayout>
 </template>
 
 <script setup lang="ts">
@@ -28,6 +40,7 @@
     import { debounce } from 'lodash';
     import { index } from '@/wayfinder/routes/article';
     import { type Article } from '@/types/article'
+    import AppTempLayout from '@/layouts/AppTempLayout.vue';
 
 
     interface WelcomePageProps {
