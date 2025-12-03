@@ -2,7 +2,10 @@
     <span class="font-bold">
         {{ props.user.name }}
     </span>
-
+    <div class="flex items-center gap-1">
+        <div class="size-4 rounded-full" :class="props.user.status == 'Online' ? 'bg-green-500' : props.user.status == 'Away' ? 'bg-amber-500' : 'bg-red-500'"/>
+        <span class="text-sm">{{ props.user.status }}</span>
+    </div>
     <span>
         Registered on {{ new Date(props.user.created_at).toLocaleDateString() }}
     </span>
