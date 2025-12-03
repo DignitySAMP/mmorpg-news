@@ -58,19 +58,4 @@ class ArticleController extends Controller
             ]
         ]);
     }
-
-    public function show(Article $article): Response
-    {
-        // TODO: improve loading here, improve comment relationship inclusion, ...
-        // //'images:id,article_id,name,description,image', // article_image relation
-        $article->load(['user', 'comments.author', 'comments.text', 'comments.created_at', 'images']);
-
-        return Inertia::render('Article/Show', [
-            'article' => array_merge($article->toArray(), [
-                'read_time' => calculateReadTime($article->content),
-                'similar_articles' => getSimilarArticles($article),
-            ]),
-        ]);
-    }
-
 }

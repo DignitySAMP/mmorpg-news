@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', [ArticleController::class, 'index'])->name('article.index');
-Route::get('/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 
+// TODO: make show article part of the slug, which should be editable in article editor
