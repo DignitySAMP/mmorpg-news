@@ -12,3 +12,6 @@ Route::get('/article/{article}', function () {
     dd(auth()->user()->hasVerifiedEmail());
     return Inertia::render('Articles/Show');
 })->middleware(['auth', 'verified'])->name('article.show');
+
+Route::get('/user/profile', fn () => Inertia::render('Fortify/UpdateProfileInformation'))->middleware('auth');
+Route::get('/user/profile/password', fn () => Inertia::render('Fortify/UpdatePasswordForm'))->middleware('auth');
