@@ -7,16 +7,14 @@
         Registered on {{ new Date(props.user.created_at).toLocaleDateString() }}
     </span>
 
-    <div class="flex flex-col">
-
+    <div class="flex flex-col" v-if="props.articles.data.length > 0">
         <span class="font-bold">Comments</span>
-
         <div v-for="comment, index in props.comments.data" :key="index" class="truncate">
             {{ new Date(comment.created_at).toLocaleDateString() }}
             {{ comment.text }}
         </div>
     </div>
-    <div class="flex flex-col">
+    <div class="flex flex-col" v-if="props.articles.data.length > 0">
 
         <span class="font-bold">Articles</span>
     
