@@ -13,7 +13,7 @@ class ArticleImage extends Model
 
     protected $fillable = ['article_id', 'name', 'description', 'image'];
 
-    public function article(): BelongsTo 
+    public function article(): BelongsTo
     {
         return $this->belongsTo(Article::class);
     }

@@ -18,7 +18,7 @@ class ArticleFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'content' => fake()->paragraphs(5,  true), // true = parse as text instead of an array
+            'content' => fake()->paragraphs(5, true), // true = parse as text instead of an array
         ];
     }
 }

@@ -19,7 +19,7 @@ class ArticleImageFactory extends Factory
         return [
             'name' => fake()->sentence(2),
             'description' => fake()->sentence(4),
-            'image' => fake()->imageUrl()
+            'image' => fake()->imageUrl(),
         ];
     }
 }

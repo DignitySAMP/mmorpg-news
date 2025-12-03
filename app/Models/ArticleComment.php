@@ -13,12 +13,12 @@ class ArticleComment extends Model
 
     protected $fillable = ['user_id', 'article_id', 'text'];
 
-    public function author(): BelongsTo 
+    public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function article(): BelongsTo 
+    public function article(): BelongsTo
     {
         return $this->belongsTo(Article::class);
     }

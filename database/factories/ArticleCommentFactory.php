@@ -17,7 +17,7 @@ class ArticleCommentFactory extends Factory
     public function definition(): array
     {
         return [
-            'text' => fake()->paragraphs(4, true) // true = parse as text instead of an array
+            'text' => fake()->paragraphs(4, true), // true = parse as text instead of an array
         ];
     }
 }

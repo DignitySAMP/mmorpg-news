@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->string('banner')->nullable();  // links to the image location in storage
             // TODO: php artisan storage:link
-            $table->string("title");
-            $table->longText("content");
+            $table->string('title');
+            $table->longText('content');
             $table->timestamps();
         });
     }

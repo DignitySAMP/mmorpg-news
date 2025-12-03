@@ -27,24 +27,23 @@ class DatabaseSeeder extends Seeder
 
         User::factory(10)->create();
 
-        for ($i=0; $i <32; $i++) { 
+        for ($i = 0; $i < 32; $i++) {
             Article::factory()->create([
-                'user_id' => User::inRandomOrder()->first()
+                'user_id' => User::inRandomOrder()->first(),
             ]);
         }
 
-        for ($i=0; $i <100; $i++) { 
+        for ($i = 0; $i < 100; $i++) {
             ArticleComment::factory()->create([
                 'user_id' => User::inRandomOrder()->first(),
-                'article_id' => Article::inRandomOrder()->first()
+                'article_id' => Article::inRandomOrder()->first(),
             ]);
 
         }
 
-
-        for ($i=0; $i < 256; $i++) { 
+        for ($i = 0; $i < 256; $i++) {
             ArticleImage::factory()->create([
-                'article_id' => Article::inRandomOrder()->first()
+                'article_id' => Article::inRandomOrder()->first(),
             ]);
         }
     }

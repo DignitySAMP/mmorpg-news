@@ -25,17 +25,20 @@ class ArticleController extends Controller
 
         // eager load all relationships, make sure to only load necessary variables
         $query = Article::query()
-            ->with([ 'user:id,name,email' ])  // user relation
-            ->withCount('comments'); // only add full comment count 
+            ->with(['user:id,name,email'])  // user relation
+            ->withCount('comments'); // only add full comment count
 
         // apply search text and sorting parameters
-        if ($search) $query = applySearch($query, $search);
+        if ($search) {
+            $query = applySearch($query, $search);
+        }
         $query = applySorting($query, $sortBy);
         $articles = $query->paginate($perPage); // paginate current collection after search queries
 
         // calculate read_time on collection (so we skip a DB query: for performance)
         $articles->getCollection()->transform(function ($article) {
             $article->read_time = calculateReadTime($article->content);
+
             return $article;
         });
 
@@ -44,7 +47,7 @@ class ArticleController extends Controller
             'filters' => [
                 'sort_by' => $sortBy,
                 'per_page' => $perPage,
-                'search' => $search
+                'search' => $search,
             ],
             'sort_options' => [
                 ['value' => 'newest', 'label' => 'Newest First'],
@@ -55,7 +58,7 @@ class ArticleController extends Controller
                 ['value' => 'most_commented', 'label' => 'Most Discussed'],
                 ['value' => 'read_time_short', 'label' => 'Quick Reads'],
                 ['value' => 'read_time_long', 'label' => 'Long Reads'],
-            ]
+            ],
         ]);
     }
 }
