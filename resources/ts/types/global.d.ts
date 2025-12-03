@@ -9,7 +9,10 @@ declare module 'vite/client' {
 
     interface ImportMeta {
         readonly env: ImportMetaEnv;
-        readonly glob: <T>(pattern: string, options?: { eager?: boolean }) => Record<string, () => Promise<T>>;
+        readonly glob: <T>(
+            pattern: string,
+            options?: { eager?: boolean },
+        ) => Record<string, () => Promise<T>>;
     }
 }
 
@@ -20,4 +23,3 @@ declare module '@vue/runtime-core' {
         $headManager: ReturnType<typeof createHeadManager>;
     }
 }
-
