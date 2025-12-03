@@ -51,6 +51,10 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::requestPasswordResetLinkView(fn (Request $request) => Inertia::render('Fortify/ForgotPassword', [
             'status' => $request->session()->get('status')
         ]));
+        Fortify::resetPasswordView(fn (Request $request) =>  Inertia::render('Fortify/ResetPassword', [
+            'email' => $request->email,
+            'token' => $request->route('token'),
+        ]));
         Fortify::verifyEmailView(fn(Request $request) => Inertia::render('Fortify/VerifyEmail', [
             'status' => $request->session()->get('status'),
         ]));
