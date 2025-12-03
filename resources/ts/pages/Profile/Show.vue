@@ -37,7 +37,10 @@
                 Date of Birth:
             </span>
             <span>
-                {{ props.user.profile_dob }}
+                {{ new Date(props.user.profile_dob).toLocaleDateString() }}
+            </span>
+            <span v-if="props.user.age !== null" class="text-xs">
+                ({{ props.user.age }} years old)
             </span>
         </div>
     </div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -54,6 +55,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return [
             'email_verified_at' => 'datetime',
+            'profile_dob' => 'datetime',
             'password' => 'hashed',
         ];
     }
@@ -76,7 +78,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ** Accessors and attributes
     */
 
-    protected $appends = ['status'];
+    protected $appends = ['status', 'age'];
 
     protected function status(): Attribute
     {
@@ -91,6 +93,16 @@ class User extends Authenticatable implements MustVerifyEmail
             }
     
             return 'Offline';
+        });
+    }
+
+    protected function age(): Attribute 
+    {
+        return Attribute::get(function() {
+            if($this->profile_dob !== null) {
+                return Carbon::parse($this->profile_dob)->age;
+            }
+            else return null;
         });
     }
 }

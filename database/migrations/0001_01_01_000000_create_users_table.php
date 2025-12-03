@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('profile_location')->nullable();
             $table->string('profile_gender')->nullable();
-            $table->string('profile_dob')->nullable();
+            $table->date('profile_dob')->nullable();
             $table->boolean('profile_privacy_online_status')->default(false)->nullable();
             $table->boolean('profile_privacy_articles')->default(false)->nullable();
             $table->boolean('profile_privacy_comments')->default(false)->nullable();

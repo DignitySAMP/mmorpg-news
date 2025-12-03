@@ -3,6 +3,7 @@ export interface User {
     email: string;
     name: string;
     status: string;
+    age: number | string | null;
     profile_location: string;
     profile_gender: string;
     profile_dob: Date;
