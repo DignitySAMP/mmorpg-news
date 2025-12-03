@@ -3,9 +3,9 @@ import { Form } from '@inertiajs/vue3'
 import { login } from '@/wayfinder/routes';
 import { email } from '@/wayfinder/routes/password';
 
-defineProps({
-  status: String
-})
+defineProps<{
+    status?: string;
+}>();
 </script>
 
 <template>
@@ -17,12 +17,9 @@ defineProps({
 		errors,
 		hasErrors,
 		processing,
-		recentlySuccessful,
-		wasSuccessful
 	}">
-		<span v-if="recentlySuccessful || wasSuccessful">
-			We have emailed you a password reset link.
-		</span>
+        <span v-if="status" v-html="status" />
+		
         <div class="flex flex-col gap-1">
           	<label for="email">Email</label>
           	<input class="border" type="email" name="email" autocomplete="email"/>
