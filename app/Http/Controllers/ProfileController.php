@@ -24,7 +24,6 @@ class ProfileController extends Controller
 
         return Inertia::render('Profile/Index', [
             'user' => $user,
-            'articles' => $user->articles()->latest()->paginate(10)->withQueryString(),
             'comments' => $user->comments()->latest()->paginate(10)->withQueryString(),
         ]);
     }
@@ -34,7 +33,6 @@ class ProfileController extends Controller
     {
         return Inertia::render('Profile/Show', [
             'user' => $user,
-            'articles' => $user->articles()->latest()->paginate(10)->withQueryString(),
             'comments' => $user->comments()->latest()->paginate(10)->withQueryString(),
         ]);
     }

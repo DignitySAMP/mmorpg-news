@@ -2,7 +2,6 @@
     <div>
         {{ usePage().props.user }}
         {{ usePage().props.comments }}
-        {{ usePage().props.articles }}
     </div>
 </template>
 <script setup lang="ts">

@@ -52,8 +52,8 @@
     <div
         class="flex flex-col"
         v-if="
-            props.articles.data.length > 0 &&
-            !props.user.profile_privacy_articles
+            props.comments.data.length > 0 &&
+            !props.user.profile_privacy_comments
         "
     >
         <span class="font-bold">Comments</span>
@@ -66,44 +66,19 @@
             {{ comment.text }}
         </div>
     </div>
-    <span v-if="props.user.profile_privacy_articles">
-        Articles have been made private by the user.
-    </span>
-    <div
-        class="flex flex-col"
-        v-if="
-            props.articles.data.length > 0 &&
-            !props.user.profile_privacy_comments
-        "
-    >
-        <span class="font-bold">Articles</span>
-
-        <div v-for="(article, index) in props.articles.data" :key="index">
-            {{ new Date(article.created_at).toLocaleDateString() }}
-            {{ article.title }}
-        </div>
-    </div>
+   
     <span v-if="props.user.profile_privacy_comments">
         Comments have been made private by the user.
     </span>
 </template>
 <script setup lang="ts">
-import { Article, ArticleComment } from '@/types/article';
+import { ArticleComment } from '@/types/article';
 import { User } from '@/types/user';
 
 interface InertiaProps {
     user: User;
     comments: {
         data: ArticleComment[];
-        current_page: number;
-        last_page: number;
-        per_page: number;
-        total: number;
-        from: number;
-        to: number;
-    };
-    articles: {
-        data: Article[];
         current_page: number;
         last_page: number;
         per_page: number;
