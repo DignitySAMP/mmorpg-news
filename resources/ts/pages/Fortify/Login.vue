@@ -4,10 +4,9 @@ import { register } from '@/wayfinder/routes';
 import { store } from '@/wayfinder/routes/login';
 import { request } from '@/wayfinder/routes/password';
 
-defineProps({
-  status: String
-})
-
+defineProps<{
+    status?: string;
+}>();
 </script>
 
 <template>
