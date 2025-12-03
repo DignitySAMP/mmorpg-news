@@ -33,7 +33,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_dob',
         'privacy_online_status',
         'privacy_articles',
-        'privacy_comments'
+        'privacy_comments',
     ];
 
     /**
@@ -86,23 +86,23 @@ class User extends Authenticatable implements MustVerifyEmail
             if (Auth::check()) {
                 if ($this->updated_at > now()->subMinutes(5)) {
                     return 'Online';
-                } 
-                elseif ($this->updated_at > now()->subMinutes(10)) {
+                } elseif ($this->updated_at > now()->subMinutes(10)) {
                     return 'Away';
                 }
             }
-    
+
             return 'Offline';
         });
     }
 
-    protected function age(): Attribute 
+    protected function age(): Attribute
     {
-        return Attribute::get(function() {
-            if($this->profile_dob !== null) {
+        return Attribute::get(function () {
+            if ($this->profile_dob !== null) {
                 return Carbon::parse($this->profile_dob)->age;
+            } else {
+                return null;
             }
-            else return null;
         });
     }
 }
