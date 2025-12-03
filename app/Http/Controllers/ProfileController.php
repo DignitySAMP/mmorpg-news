@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class ProfileController extends Controller
@@ -17,6 +18,13 @@ class ProfileController extends Controller
     public function index(Request $request) {
         // If logged in, change avatar?
         // Default to 'my' profile which has an 'edit' button that links to 'user/profile' and 'user/profile/password'
+    
+        $user = Auth::user();
+        return Inertia::render('Profile/Index', [
+            'user' => $user,
+            'articles'  => $user->articles()->latest()->paginate(10)->withQueryString(),
+            'comments'  => $user->comments()->latest()->paginate(10)->withQueryString(),
+        ]);
     }
 
     // TODO: Make comments and articles searchable by string and date.
