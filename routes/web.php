@@ -16,6 +16,6 @@ Route::get('/article/{article}', function () {
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
 Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
-
-Route::get('/user/profile', fn () => Inertia::render('Fortify/UpdateProfileInformation'))->middleware('auth');
-Route::get('/user/profile/password', fn () => Inertia::render('Fortify/UpdatePasswordForm'))->middleware('auth');
+Route::get('/user/profile', [ProfileController::class, 'update'])->middleware('auth')->name('profile.info');
+Route::get('/user/profile/account', fn () => Inertia::render('Fortify/UpdateProfileInformation'))->middleware('auth')->name('profile.account');
+Route::get('/user/profile/password', fn () => Inertia::render('Fortify/UpdatePasswordForm'))->middleware('auth')->name('profile.password');

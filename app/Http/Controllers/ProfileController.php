@@ -36,4 +36,8 @@ class ProfileController extends Controller
             'comments' => $user->comments()->latest()->paginate(10)->withQueryString(),
         ]);
     }
+
+    public function update(Request $request) {
+        return Inertia::render('Profile/Edit');
+    }
 }
