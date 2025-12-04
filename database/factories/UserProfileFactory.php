@@ -21,8 +21,8 @@ class UserProfileFactory extends Factory
             'gender' => fake()->randomElement(['male', 'female', 'other', 'hidden']),
             'date_of_birth' => fake()->dateTime(),
             'show_profile' => fake()->boolean(80),
-            'show_online_status' =>  fake()->boolean(50),
-            'show_comments' =>  fake()->boolean(50),
+            'show_online_status' => fake()->boolean(50),
+            'show_comments' => fake()->boolean(50),
         ];
     }
 }

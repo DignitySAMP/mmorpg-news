@@ -28,9 +28,9 @@ class DatabaseSeeder extends Seeder
 
         $numUsers = 10;
         User::factory($numUsers)->create();
-        for($i = 0; $i < $numUsers + 1; $i++) {
+        for ($i = 0; $i < $numUsers + 1; $i++) {
             $profile = UserProfile::factory()->create([
-                'user_id' => $i
+                'user_id' => $i,
             ]);
         }
 

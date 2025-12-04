@@ -40,7 +40,7 @@ class CreateNewUser implements CreatesNewUsers
 
         // create new profile
         UserProfile::create([
-            'user_id' => $user->id
+            'user_id' => $user->id,
         ]);
 
         return $user;

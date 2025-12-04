@@ -4,12 +4,9 @@
     </span>
 
     <div v-if="!props.user.profile?.show_profile">
-        <span>
-            This profile is hidden.
-        </span>
+        <span> This profile is hidden. </span>
     </div>
     <div v-else class="flex flex-col gap-1">
-
         <div
             class="flex items-center gap-1"
             v-if="props.user.profile?.show_online_status"
@@ -35,7 +32,7 @@
         <div class="flex gap-1">
             <span class="font-bold"> Location: </span>
             <span>
-                {{ props.user.profile?.location ?? 'Hidden'}}
+                {{ props.user.profile?.location ?? 'Hidden' }}
             </span>
         </div>
 
@@ -48,7 +45,9 @@
 
         <div class="flex gap-1">
             <span class="font-bold"> Date of Birth: </span>
-            <span v-if="props.user.profile && props.user.profile?.date_of_birth">
+            <span
+                v-if="props.user.profile && props.user.profile?.date_of_birth"
+            >
                 {{ new Date(props.user.profile.date_of_birth).toDateString() }}
             </span>
             <span v-else>Hidden</span>
@@ -71,9 +70,7 @@
                 {{ comment.text }}
             </div>
         </div>
-        <span v-else>
-            There are no comments to show.
-        </span>
+        <span v-else> There are no comments to show. </span>
     </div>
     <span v-else>Comments are hidden.</span>
 </template>

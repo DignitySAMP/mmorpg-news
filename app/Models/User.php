@@ -4,7 +4,6 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -68,7 +67,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(ArticleComment::class);
     }
 
-    public function profile(): HasOne {
+    public function profile(): HasOne
+    {
         return $this->hasOne(UserProfile::class);
     }
 

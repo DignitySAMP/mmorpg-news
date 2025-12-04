@@ -15,21 +15,35 @@ class UserProfile extends Model
 
     protected $fillable = ['user_id', 'location', 'gender', 'date_of_birth', 'show_profile', 'show_online_status', 'show_comments'];
 
+    /*
+    ** Casts
+    */
+
     protected function casts(): array
     {
         return [
             'date_of_birth' => 'datetime',
             'show_profile' => 'boolean',
-            'show_online_status'=> 'boolean',
-            'show_comments' => 'boolean'
+            'show_online_status' => 'boolean',
+            'show_comments' => 'boolean',
         ];
     }
 
-    public function user(): BelongsTo {
+    /*
+    ** Eloquent relationships
+    */
+
+    public function user(): BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
 
+    /*
+    ** Accessors and attributes
+    */
+
     protected $appends = ['age'];
+
     protected function age(): Attribute
     {
         return Attribute::get(function () {

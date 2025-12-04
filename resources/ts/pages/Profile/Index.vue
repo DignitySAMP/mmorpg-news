@@ -17,19 +17,19 @@
         </span>
 
         <div class="flex gap-1">
-            <span class="font-bold">
-                Profile Status:
-            </span>
+            <span class="font-bold"> Profile Status: </span>
             <span>
-                {{ props.user.profile?.show_profile ? 'Public' : 'Private'}}
+                {{ props.user.profile?.show_profile ? 'Public' : 'Private' }}
             </span>
         </div>
         <div class="flex gap-1">
-            <span class="font-bold">
-                Online Status:
-            </span>
+            <span class="font-bold"> Online Status: </span>
             <span>
-                {{ props.user.profile?.show_online_status ? 'Public' : 'Private'}}
+                {{
+                    props.user.profile?.show_online_status
+                        ? 'Public'
+                        : 'Private'
+                }}
             </span>
         </div>
 
@@ -41,7 +41,7 @@
         <div class="flex gap-1">
             <span class="font-bold"> Location: </span>
             <span>
-                {{ props.user.profile?.location ?? 'No country selected'}}
+                {{ props.user.profile?.location ?? 'No country selected' }}
             </span>
         </div>
 
@@ -54,7 +54,9 @@
 
         <div class="flex gap-1">
             <span class="font-bold"> Date of Birth: </span>
-            <span v-if="props.user.profile && props.user.profile?.date_of_birth">
+            <span
+                v-if="props.user.profile && props.user.profile?.date_of_birth"
+            >
                 {{ new Date(props.user.profile.date_of_birth).toDateString() }}
             </span>
             <span v-else>No date of birth selected</span>
@@ -66,7 +68,13 @@
         <div class="flex flex-col" v-if="props.comments.data.length > 0">
             <div class="flex gap-1">
                 <span class="font-bold">Your Contributions</span>
-                <span class="text-xs">({{ props.user.profile?.show_comments ? 'public' : 'private' }})</span>
+                <span class="text-xs"
+                    >({{
+                        props.user.profile?.show_comments
+                            ? 'public'
+                            : 'private'
+                    }})</span
+                >
             </div>
             <div
                 v-for="(comment, index) in props.comments.data"
@@ -80,10 +88,10 @@
     </div>
 </template>
 <script setup lang="ts">
-import { account, update, password } from '@/wayfinder/routes/profile';
-import { Link } from '@inertiajs/vue3';
 import { ArticleComment } from '@/types/article';
 import { User } from '@/types/user';
+import { account, password, update } from '@/wayfinder/routes/profile';
+import { Link } from '@inertiajs/vue3';
 interface InertiaProps {
     user: User;
     comments: {

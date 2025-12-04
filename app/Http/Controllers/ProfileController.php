@@ -17,7 +17,7 @@ class ProfileController extends Controller
     public function index(Request $request)
     {
         // If logged in, change avatar?
-        
+
         $user = Auth::user();
 
         return Inertia::render('Profile/Index', [
@@ -35,14 +35,17 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $user = Auth::user();
+
         return Inertia::render('Profile/Edit', [
             'user' => $user->load('profile'),
         ]);
     }
 
-    public function edit(Request $request) {
+    public function edit(Request $request)
+    {
         $data = $request->validate([
             'country' => 'string|nullable',
             'gender' => [Rule::in(['male', 'female', 'other', 'hidden'])],
@@ -51,7 +54,7 @@ class ProfileController extends Controller
             'privacy.online_status' => 'boolean',
             'privacy.show_comments' => 'boolean',
         ]);
-    
+
         $user = Auth::user();
         $user->load('profile');
 

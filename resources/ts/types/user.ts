@@ -9,15 +9,14 @@ export interface User {
     updated_at: Date;
 }
 
-
 export interface UserProfile {
-    id: number,
-    user_id: number,
+    id: number;
+    user_id: number;
     age: number | string | null;
-    location?: string | null,
-    gender?: string | null,
-    date_of_birth?: null | string | number | Date,
-    show_profile: boolean,
-    show_online_status: boolean,
-    show_comments: boolean,
+    location?: string | null;
+    gender?: string | null;
+    date_of_birth?: null | string | number | Date;
+    show_profile: boolean;
+    show_online_status: boolean;
+    show_comments: boolean;
 }
