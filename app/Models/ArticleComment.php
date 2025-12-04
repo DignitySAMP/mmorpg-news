@@ -13,6 +13,10 @@ class ArticleComment extends Model
 
     protected $fillable = ['user_id', 'article_id', 'text'];
 
+    /*
+    ** Eloquent Relationships
+    */
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
