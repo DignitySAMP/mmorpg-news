@@ -12,7 +12,7 @@
         </div>
 
         <div
-            class="bottom right absolute flex h-96 w-full flex-col gap-1 overflow-auto border"
+            class="bottom right absolute flex h-96 w-full flex-col gap-1 overflow-auto border z-50 bg-white"
             v-if="showCountryList"
         >
             <input

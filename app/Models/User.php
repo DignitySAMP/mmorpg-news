@@ -31,8 +31,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_location',
         'profile_gender',
         'profile_dob',
-        'privacy_online_status',
-        'privacy_comments',
+        'profile_privacy_online_status',
+        'profile_privacy_comments',
     ];
 
     /**
@@ -56,6 +56,9 @@ class User extends Authenticatable implements MustVerifyEmail
             'email_verified_at' => 'datetime',
             'profile_dob' => 'datetime',
             'password' => 'hashed',
+            'profile_privacy_online_status'=> 'boolean',
+            'profile_privacy_comments' => 'boolean'
+
         ];
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 
 class ProfileController extends Controller
@@ -39,5 +40,27 @@ class ProfileController extends Controller
 
     public function update(Request $request) {
         return Inertia::render('Profile/Edit');
+    }
+
+    public function edit(Request $request) {
+        $data = $request->validate([
+            'country' => 'string',
+            'gender' => [Rule::in(['male', 'female', 'other', 'hidden'])],
+            'dob' => 'date',
+            'privacy.online_status' => 'boolean',
+            'privacy.show_comments' => 'boolean',
+        ]);
+    
+        $user = Auth::user();
+
+        $user->update([
+            'profile_location' => $data['country'],
+            'profile_gender' => $data['gender'],
+            'profile_dob' => $data['dob'],
+            'profile_privacy_online_status' => $data['privacy']['online_status'],
+            'profile_privacy_comments' => $data['privacy']['show_comments'],
+        ]);
+
+        return redirect()->back();
     }
 }

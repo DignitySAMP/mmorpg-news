@@ -1,6 +1,6 @@
 <template>
     <div class="flex gap-4">
-        <Link :href="info().url" as="button" class="w-full border">
+        <Link :href="update().url" as="button" class="w-full border">
             Change Profile
         </Link>
         <Link :href="account().url" as="button" class="w-full border">
@@ -59,7 +59,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { account, info, password } from '@/wayfinder/routes/profile';
+import { account, update, password } from '@/wayfinder/routes/profile';
 import { Link } from '@inertiajs/vue3';
 // TODO: Add links to 'edit your account details', 'edit your password', 'edit your profile'
 import { ArticleComment } from '@/types/article';
