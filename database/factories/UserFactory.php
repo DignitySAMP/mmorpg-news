@@ -33,7 +33,6 @@ class UserFactory extends Factory
             'profile_gender' => fake()->randomElement(['male', 'female']),
             'profile_dob' => fake()->date(),
             'profile_privacy_online_status' => fake()->boolean(50),
-            'profile_privacy_articles' => fake()->boolean(50),
             'profile_privacy_comments' => fake()->boolean(50),
             'created_at' => fake()->date(),
             'updated_at' => fake()->date(),
