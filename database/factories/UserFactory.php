@@ -29,11 +29,6 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
-            'profile_location' => fake()->country(),
-            'profile_gender' => fake()->randomElement(['male', 'female']),
-            'profile_dob' => fake()->date(),
-            'profile_privacy_online_status' => fake()->boolean(50),
-            'profile_privacy_comments' => fake()->boolean(50),
             'created_at' => fake()->date(),
             'updated_at' => fake()->date(),
         ];

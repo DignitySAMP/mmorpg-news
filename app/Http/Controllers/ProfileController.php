@@ -14,51 +14,54 @@ class ProfileController extends Controller
     ** This controller handles the viewing of public profiles.
     */
 
-    // TODO: Add a centralized 'profile/edit' page where you can change account info (username, email), passwords, and profile info, which includes birthday, gender, location, ...
-    // TODO: Add setting on profile where users can choose to hide their articles or comments or show as 'invisible'
     public function index(Request $request)
     {
         // If logged in, change avatar?
-        // Default to 'my' profile which has an 'edit' button that links to 'user/profile' and 'user/profile/password'
-
+        
         $user = Auth::user();
 
         return Inertia::render('Profile/Index', [
-            'user' => $user,
+            'user' => $user->load('profile'),
             'comments' => $user->comments()->latest()->paginate(10)->withQueryString(),
         ]);
     }
 
-    // TODO: Make comments and articles searchable by string and date.
+    // TODO: Make comments searchable by string and date.
     public function show(Request $request, User $user)
     {
         return Inertia::render('Profile/Show', [
-            'user' => $user,
+            'user' => $user->load('profile'),
             'comments' => $user->comments()->latest()->paginate(10)->withQueryString(),
         ]);
     }
 
     public function update(Request $request) {
-        return Inertia::render('Profile/Edit');
+        $user = Auth::user();
+        return Inertia::render('Profile/Edit', [
+            'user' => $user->load('profile'),
+        ]);
     }
 
     public function edit(Request $request) {
         $data = $request->validate([
-            'country' => 'string',
+            'country' => 'string|nullable',
             'gender' => [Rule::in(['male', 'female', 'other', 'hidden'])],
-            'dob' => 'date',
+            'dob' => 'nullable|date',
+            'privacy.show_profile' => 'boolean',
             'privacy.online_status' => 'boolean',
             'privacy.show_comments' => 'boolean',
         ]);
     
         $user = Auth::user();
+        $user->load('profile');
 
-        $user->update([
-            'profile_location' => $data['country'],
-            'profile_gender' => $data['gender'],
-            'profile_dob' => $data['dob'],
-            'profile_privacy_online_status' => $data['privacy']['online_status'],
-            'profile_privacy_comments' => $data['privacy']['show_comments'],
+        $user->profile->update([
+            'location' => $data['country'],
+            'gender' => $data['gender'],
+            'date_of_birth' => $data['dob'],
+            'show_profile' => $data['privacy']['show_profile'],
+            'show_online_status' => $data['privacy']['online_status'],
+            'show_comments' => $data['privacy']['show_comments'],
         ]);
 
         return redirect()->back();

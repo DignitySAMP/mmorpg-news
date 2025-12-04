@@ -1,14 +1,20 @@
 <template>
     <div class="relative min-w-96">
         <div
-            class="flex w-full cursor-pointer justify-between gap-8 border px-4"
+            class=" w-full cursor-pointer border"
+            :class="{ 'px-4': selectedCountry }"
             @click="toggleList"
         >
-            <span v-html="getCountryInstance(selectedCountry).flag" />
-            <span
-                class="truncate"
-                v-html="getCountryInstance(selectedCountry).name"
-            />
+            <div v-if="selectedCountry" class="flex justify-between gap-8 ">
+                <span v-html="getCountryInstance(selectedCountry).flag" />
+                <span
+                    class="truncate"
+                    v-html="getCountryInstance(selectedCountry).name"
+                />
+            </div>
+            <div v-else>
+                <span>No country selected.</span>
+            </div>
         </div>
 
         <div

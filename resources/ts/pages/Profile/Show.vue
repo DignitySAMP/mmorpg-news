@@ -1,11 +1,18 @@
 <template>
-    <div class="flex flex-col gap-1">
-        <span class="font-bold">
-            {{ props.user.name }}
+    <span class="font-bold">
+        {{ props.user.name }}
+    </span>
+
+    <div v-if="!props.user.profile?.show_profile">
+        <span>
+            This profile is hidden.
         </span>
+    </div>
+    <div v-else class="flex flex-col gap-1">
+
         <div
             class="flex items-center gap-1"
-            v-if="!props.user.profile_privacy_online_status"
+            v-if="props.user.profile?.show_online_status"
         >
             <div
                 class="size-4 rounded-full"
@@ -28,53 +35,51 @@
         <div class="flex gap-1">
             <span class="font-bold"> Location: </span>
             <span>
-                {{ props.user.profile_location }}
+                {{ props.user.profile?.location ?? 'Hidden'}}
             </span>
         </div>
 
         <div class="flex gap-1">
             <span class="font-bold"> Gender: </span>
             <span>
-                {{ props.user.profile_gender }}
+                {{ props.user.profile?.gender }}
             </span>
         </div>
 
         <div class="flex gap-1">
             <span class="font-bold"> Date of Birth: </span>
-            <span>
-                {{ new Date(props.user.profile_dob).toLocaleDateString() }}
+            <span v-if="props.user.profile && props.user.profile?.date_of_birth">
+                {{ new Date(props.user.profile.date_of_birth).toDateString() }}
             </span>
-            <span v-if="props.user.age !== null" class="text-xs">
-                ({{ props.user.age }} years old)
+            <span v-else>Hidden</span>
+            <span v-if="props.user.profile?.age !== null" class="text-xs">
+                ({{ props.user.profile?.age }} years old)
             </span>
         </div>
     </div>
-    <div
-        class="flex flex-col"
-        v-if="
-            props.comments.data.length > 0 &&
-            !props.user.profile_privacy_comments
-        "
-    >
-        <span class="font-bold">Comments</span>
-        <div
-            v-for="(comment, index) in props.comments.data"
-            :key="index"
-            class="truncate"
-        >
-            {{ new Date(comment.created_at).toLocaleDateString() }}
-            {{ comment.text }}
+    <div v-if="props.user.profile?.show_comments">
+        <div class="flex flex-col" v-if="props.comments.data.length > 0">
+            <div class="flex gap-1">
+                <span class="font-bold">Contributions</span>
+            </div>
+            <div
+                v-for="(comment, index) in props.comments.data"
+                :key="index"
+                class="truncate"
+            >
+                {{ new Date(comment.created_at).toLocaleDateString() }}
+                {{ comment.text }}
+            </div>
         </div>
+        <span v-else>
+            There are no comments to show.
+        </span>
     </div>
-
-    <span v-if="props.user.profile_privacy_comments">
-        Comments have been made private by the user.
-    </span>
+    <span v-else>Comments are hidden.</span>
 </template>
 <script setup lang="ts">
 import { ArticleComment } from '@/types/article';
 import { User } from '@/types/user';
-
 interface InertiaProps {
     user: User;
     comments: {

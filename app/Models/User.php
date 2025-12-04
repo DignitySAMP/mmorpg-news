@@ -9,6 +9,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
@@ -28,11 +29,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'profile_location',
-        'profile_gender',
-        'profile_dob',
-        'profile_privacy_online_status',
-        'profile_privacy_comments',
     ];
 
     /**
@@ -54,11 +50,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return [
             'email_verified_at' => 'datetime',
-            'profile_dob' => 'datetime',
             'password' => 'hashed',
-            'profile_privacy_online_status'=> 'boolean',
-            'profile_privacy_comments' => 'boolean'
-
         ];
     }
 
@@ -76,11 +68,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(ArticleComment::class);
     }
 
+    public function profile(): HasOne {
+        return $this->hasOne(UserProfile::class);
+    }
+
     /*
     ** Accessors and attributes
     */
 
-    protected $appends = ['status', 'age'];
+    protected $appends = ['status'];
 
     protected function status(): Attribute
     {
@@ -94,17 +90,6 @@ class User extends Authenticatable implements MustVerifyEmail
             }
 
             return 'Offline';
-        });
-    }
-
-    protected function age(): Attribute
-    {
-        return Attribute::get(function () {
-            if ($this->profile_dob !== null) {
-                return Carbon::parse($this->profile_dob)->age;
-            } else {
-                return null;
-            }
         });
     }
 }
