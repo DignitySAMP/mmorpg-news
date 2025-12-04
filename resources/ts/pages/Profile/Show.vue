@@ -66,7 +66,7 @@
             {{ comment.text }}
         </div>
     </div>
-   
+
     <span v-if="props.user.profile_privacy_comments">
         Comments have been made private by the user.
     </span>

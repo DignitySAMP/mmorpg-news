@@ -15,7 +15,7 @@
         <span class="font-bold">
             {{ props.user.name }}
         </span>
-        
+
         <span>
             Registered on
             {{ new Date(props.user.created_at).toLocaleDateString() }}
@@ -45,12 +45,7 @@
             </span>
         </div>
 
-        <div
-            class="flex flex-col"
-            v-if="
-                props.comments.data.length > 0
-            "
-        >
+        <div class="flex flex-col" v-if="props.comments.data.length > 0">
             <span class="font-bold">Your Comments</span>
             <div
                 v-for="(comment, index) in props.comments.data"
@@ -64,8 +59,8 @@
     </div>
 </template>
 <script setup lang="ts">
-import { usePage, Link} from '@inertiajs/vue3';
 import { account, info, password } from '@/wayfinder/routes/profile';
+import { Link } from '@inertiajs/vue3';
 // TODO: Add links to 'edit your account details', 'edit your password', 'edit your profile'
 import { ArticleComment } from '@/types/article';
 import { User } from '@/types/user';
