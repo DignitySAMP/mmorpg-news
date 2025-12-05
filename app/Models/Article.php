@@ -55,6 +55,7 @@ class Article extends Model
         return $query->join('users', 'articles.user_id', '=', 'users.id')->orderBy('users.name', 'asc')->select('articles.*');
     }
 
+    // TODO: Sort by most and least comments
     public function scopeSortByComments($query) {
         return $query->withCount('comments')->orderBy('comments_count', 'desc');
     }
