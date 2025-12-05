@@ -42,14 +42,14 @@ class ImportMMORPGs extends Command
             // download thumbnail
             $thumbnailPath = null;
             if (!empty($details['thumbnail'])) {
-                $thumbnailPath = $this->downloadImage($details['thumbnail'], 'thumbnails');
+                $thumbnailPath = $this->downloadImage($details['thumbnail'], 'thumbnails', $game['title']);
             }
 
             // download  screenshots
             $screenshots = [];
             if (!empty($details['screenshots'])) {
                 foreach ($details['screenshots'] as $screenshot) {
-                    $screenshots[] = $this->downloadImage($screenshot['image'], 'screenshots');
+                    $screenshots[] = $this->downloadImage($screenshot['image'], 'screenshots', $game['title']);
                 }
             }
 
@@ -74,11 +74,11 @@ class ImportMMORPGs extends Command
         return 0;
     }
 
-    protected function downloadImage(string $url, string $folder): ?string
+    protected function downloadImage(string $url, string $folder, string $title): ?string
     {
         try {
             $contents = Http::get($url)->body();
-            $filename = $folder . '/' . basename($url);
+            $filename = $folder . '/' . $title . '/' . basename($url);
             Storage::disk('public')->put($filename, $contents);
             return Storage::url($filename);
         } catch (\Exception $e) {

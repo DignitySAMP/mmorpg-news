@@ -53,5 +53,7 @@ class DatabaseSeeder extends Seeder
                 'article_id' => Article::inRandomOrder()->first(),
             ]);
         }
+
+        $this->call(GamesTableSeeder::class);
     }
 }
