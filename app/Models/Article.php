@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+// TODO: Add article resource
 class Article extends Model
 {
     use HasFactory;
@@ -36,35 +37,44 @@ class Article extends Model
     ** Scopes
     */
 
-    public function scopeSortByTitleAsc($query) {
-        return  $query->orderBy('title', 'asc');
-    }
-    public function scopeSortByTitleDesc($query) {
-        return  $query->orderBy('title', 'desc');
+    public function scopeSortByTitleAsc($query)
+    {
+        return $query->orderBy('title', 'asc');
     }
 
-    public function scopeSortByNewest($query) {
-        return  $query->latest('created_at');
+    public function scopeSortByTitleDesc($query)
+    {
+        return $query->orderBy('title', 'desc');
     }
 
-    public function scopeSortByOldest($query) {
-        return  $query->oldest('created_at');
+    public function scopeSortByNewest($query)
+    {
+        return $query->latest('created_at');
     }
 
-    public function scopeSortByAuthor($query) {
+    public function scopeSortByOldest($query)
+    {
+        return $query->oldest('created_at');
+    }
+
+    public function scopeSortByAuthor($query)
+    {
         return $query->join('users', 'articles.user_id', '=', 'users.id')->orderBy('users.name', 'asc')->select('articles.*');
     }
 
     // TODO: Sort by most and least comments
-    public function scopeSortByComments($query) {
+    public function scopeSortByComments($query)
+    {
         return $query->withCount('comments')->orderBy('comments_count', 'desc');
     }
 
-    public function scopeSortByReadTimeShort($query) {
+    public function scopeSortByReadTimeShort($query)
+    {
         return $query->orderByRaw('LENGTH(content) ASC');
     }
 
-    public function scopeSortByReadTimeLong($query) {
+    public function scopeSortByReadTimeLong($query)
+    {
         return $query->orderByRaw('LENGTH(content) DESC');
     }
 
@@ -113,5 +123,4 @@ class Article extends Model
 
         return max(1, ceil($wordCount / 170));
     }
-
 }

@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
-
-
 class ArticleController extends Controller
 {
     /*
@@ -32,41 +30,41 @@ class ArticleController extends Controller
         if ($request->filled('search')) {
             $query->search($search);
         }
-        
-        if($request->filled('sortBy')) {
-            switch($sortBy) {
-                case 'newest': {
+
+        if ($request->filled('sortBy')) {
+            switch ($sortBy) {
+                case 'newest':
                     $query->sortByNewest();
                     break;
-                }
-                case 'oldest': {
+
+                case 'oldest':
                     $query->sortByOldest();
                     break;
-                }
-                case 'title_asc': {
+
+                case 'title_asc':
                     $query->sortByTitleAsc();
                     break;
-                }
-                case 'title_desc': {
+
+                case 'title_desc':
                     $query->sortByTitleDesc();
                     break;
-                }
-                case 'author': {
+
+                case 'author':
                     $query->sortByAuthor();
                     break;
-                }
-                case 'most_commented': {
+
+                case 'most_commented':
                     $query->sortByComments();
                     break;
-                }
-                case 'read_time_short': {
+
+                case 'read_time_short':
                     $query->sortByReadTimeShort();
                     break;
-                }
-                case 'read_time_long': {
+
+                case 'read_time_long':
                     $query->sortByReadTimeLong();
                     break;
-                }
+
             }
         }
 
@@ -76,9 +74,10 @@ class ArticleController extends Controller
         // TODO: Make this a db field instead that's auto calculated on store.
         $articles->getCollection()->transform(function ($article) {
             $article->read_time = $article->calculateReadTime();
+
             return $article;
         });
-        
+
         return Inertia::render('Welcome', [
             'articles' => $articles,
             'filters' => [
@@ -86,7 +85,7 @@ class ArticleController extends Controller
                 'per_page' => $perPage,
                 'search' => $search,
             ],
-            'sort_options' => config('blog.sort_options')
+            'sort_options' => config('blog.sort_options'),
         ]);
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+// TODO: Add profile resource
 class UserProfile extends Model
 {
     /** @use HasFactory<\Database\Factories\UserProfileFactory> */
