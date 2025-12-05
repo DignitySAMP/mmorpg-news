@@ -133,7 +133,7 @@
     {
         "id": 6,
         "title": "Hero Wars: Dominion Era",
-        "thumbnail": "",
+        "thumbnail": "/storage/thumbnails/Hero Wars Dominion Era/thumbnail.jpg",
         "short_description": "A free-to-play browser MMORPG where players assemble teams of heroes to battle against powerful enemies.",
         "description": "<p style=\"text-align: justify;\">Hero Wars is a 2d fantasy-themed browser-based MMORPG with tactical combat. The game focuses on hero collection, skill progression, and strategic team formation.</p>\n\n<p style=\"text-align: justify;\">Players can build and customize their own teams from a wide range of heroes, each offering unique abilities and combat roles. As the adventure unfolds, new heroes, pets, and Titans become available, adding some depth and variety.</p>\n\n<p style=\"text-align: justify;\">The game features both PvE and PvP modes, including a story-driven campaign, Guild Wars, and competitive Arena battles. Each mode challenges players to refine their tactics and strengthen their heroes through experience and upgrades.</p>",
         "genre": "MMORPG",
@@ -302,7 +302,7 @@
     {
         "id": 13,
         "title": "Star Wars: The Old Republic",
-        "thumbnail": "",
+        "thumbnail": "/storage/thumbnails/Star Wars The Old Republic/thumbnail.jpg",
         "short_description": "Star Wars: The Old Republic (SWTOR) is a free to play 3D Sci-Fi MMORPG based on the popular Star Wars universe.",
         "description": "<p style=\"text-align: justify;\">Star Wars: The Old Republic (SWTOR) is a free to play 3D Sci-Fi MMORPG based on the popular Star Wars universe. SWTOR takes place 3000 years before the films, and allows players to become Jedi, Sith, Bounty Hunters, Troopers, and other iconic classes! Each class features a custom storyline, complete with fully voice acted dialogue and dynamic questions that allow players to make meaningful choices that impact their own personal story.</p>\n<p style=\"text-align: justify;\">As players progress they will meet a variety of class specific companions, each with their own special traits and behavior. These companions come with detailed armor sets, unique abilities and personal stories that progress alongside the players. Players will also gain access to a class specific ship, which allows players to travel in between planets and engage in space combat missions.</p>\n<p style=\"text-align: justify;\">As a Free-to-Play player, some restrictions are present when attempting PvE dungeons/raids and PvP battlegrounds. A F2P player can only participate in 5 battlegrounds and can only gain loot from the bosses in the first 3 dungeons they attempt every week; players are also restricted from doing any Raids as a completely F2P player.</p>",
         "genre": "MMORPG",
@@ -318,10 +318,10 @@
             "storage": "15 GB"
         },
         "screenshots": [
-            null,
-            null,
-            null,
-            null
+            "/storage/screenshots/Star Wars The Old Republic/Star-Wars-The-Old-Republic-1.jpg",
+            "/storage/screenshots/Star Wars The Old Republic/Star-Wars-The-Old-Republic-2.jpg",
+            "/storage/screenshots/Star Wars The Old Republic/Star-Wars-The-Old-Republic-3.jpg",
+            "/storage/screenshots/Star Wars The Old Republic/Star-Wars-The-Old-Republic-4.jpg"
         ],
         "created_at": "2025-12-05 20:05:13",
         "updated_at": "2025-12-05 20:05:13"
@@ -486,7 +486,7 @@
     {
         "id": 20,
         "title": "Blue Protocol: Star Resonance",
-        "thumbnail": "",
+        "thumbnail": "/storage/thumbnails/Blue Protocol Star Resonance/thumbnail.jpg",
         "short_description": "Blue Protocol: Star Resonance is an anime-style action MMORPG where you can raid, craft, fish, and explore the vibrant world of Regnus with others with friends.",
         "description": "<p style=\"text-align: justify;\">Blue Protocol: Star Resonance is an anime‑styled MMORPG that features striking visuals, detailed character customization, action combat, story-driven quests, various life skills, activity-focused socialization, and an explorable open world.</p>\n<p style=\"text-align: justify;\">Gameplay centres on a flexible class system where characters can fill roles like tank, healer, or DPS, and swap styles as needed. Combat itself emphasizes real‑time dodging, combos, and team coordination in raids, dungeons, and world bosses. Outside combat, players can engage in life skills such as fishing, crafting, mining, and join social activities like guilds, housing, and multiplayer events.</p>\n<p style=\"text-align: justify;\">The game supports full cross‑platform play between PC and mobile, and monetization is focused on cosmetics and optional conveniences rather than pay‑to‑win mechanics (according to the developers).</p>",
         "genre": "MMORPG",
@@ -502,9 +502,9 @@
             "storage": "35 GB"
         },
         "screenshots": [
-            null,
-            null,
-            null
+            "/storage/screenshots/Blue Protocol Star Resonance/blue-protocol-1.jpg",
+            "/storage/screenshots/Blue Protocol Star Resonance/blue-protocol-2.jpg",
+            "/storage/screenshots/Blue Protocol Star Resonance/blue-protocol-3.jpg"
         ],
         "created_at": "2025-12-05 20:05:18",
         "updated_at": "2025-12-05 20:05:18"
@@ -642,7 +642,7 @@
     {
         "id": 26,
         "title": "Odin: Valhalla Rising",
-        "thumbnail": "",
+        "thumbnail": "/storage/thumbnails/Odin Valhalla Rising/thumbnail.jpg",
         "short_description": "Nordic mythology MMORPG fun in an open world on your PC or on the go.",
         "description": "<p style=\"text-align: justify;\">Having released back in 2021 on mobile devices in Korea, Odin: Valhalla Rising spent 17 weeks on the top of the Google Play Store charts. Developed by Lionheart Studio and published by Kakao Games, now it's time to take the fight global and to bring it to PC.</p>\n<p style=\"text-align: justify;\">This free-tp-play, open-world MMORPG is firmly rooted in Nordic mythology and allows players to enter the dark, gritty side of a world embroiled in visceral combat. Choose from one of four classes (Sorceress, Priest, Rogue, or Warrior) and start exploring a world that includes mythological locations you've likely heard of like Midgard and Jotunheim.</p>\n<p style=\"text-align: justify;\">Being on mobile devices hasn't stopped Odin: Valhalla Rising from including large-scale combat not only in PvE with dungeons and raids, but also in PvP. Group up for the 30v30 Battle of Valhalla or wait just a bit to roll with your guild in the upcoming guild battles. The lack of loading screens is also a nice touch for the genre.</p>\n<p style=\"text-align: justify;\">Expect the global release to have a number of improvements over its Korean cousin including enhanced character and environment assets, comprehensive bug fixes, and a refined user interface for an \"optimal player experience.\"</p>",
         "genre": "MMORPG",
@@ -658,9 +658,9 @@
             "storage": "More than 20GB"
         },
         "screenshots": [
-            null,
-            null,
-            null
+            "/storage/screenshots/Odin Valhalla Rising/odin-valhalla-rising-1.jpg",
+            "/storage/screenshots/Odin Valhalla Rising/odin-valhalla-rising-2.jpg",
+            "/storage/screenshots/Odin Valhalla Rising/odin-valhalla-rising-3.jpg"
         ],
         "created_at": "2025-12-05 20:05:24",
         "updated_at": "2025-12-05 20:05:24"
@@ -746,7 +746,7 @@
     {
         "id": 30,
         "title": "Sky: Children of the Light",
-        "thumbnail": "",
+        "thumbnail": "/storage/thumbnails/Sky Children of the Light/thumbnail.jpg",
         "short_description": "Take a beautiful trip through a wonderous world from the creators of \"Journey.",
         "description": "<p style=\"text-align: justify;\">First off, Sky: Children of the Light is probably different from almost any other \"MMO\" you've ever played before. Don't go in trying to compare Sky to things like World of Warcraft or Final Fantasy XIV, it just doesn't fit into that kind of a bucket. Instead, Sky drops you in an artfully designed visual world comprised of multiple regions. Sure, you'll be doing quests, solving puzzles, and taking on trials to defend the realm from darkness, but that just covers the basics.</p>\n<p style=\"text-align: justify;\">However, the real \"Journey\" (pun intended since that is the name of thatgamecompany's other well-known title) comes in exploring the vast world. Fly, run, and discover the lore behind a world specifically designed to inspire child-like wonder. As you explore, you'll team up with friends old and new utilizing social systems that encourage working together. If you're ever unsure of what to do next, hold hands (literally) with experienced players and take off on your next adventure.</p>\n<p>Find your place in the world and express yourself through a vast array of cosmetics before your next flight!</p>",
         "genre": "MMORPG",
@@ -762,9 +762,9 @@
             "storage": "3 GB available space"
         },
         "screenshots": [
-            null,
-            null,
-            null
+            "/storage/screenshots/Sky Children of the Light/sky-1.jpg",
+            "/storage/screenshots/Sky Children of the Light/sky-2.jpg",
+            "/storage/screenshots/Sky Children of the Light/sky-3.jpg"
         ],
         "created_at": "2025-12-05 20:05:28",
         "updated_at": "2025-12-05 20:05:28"
@@ -867,7 +867,7 @@
     {
         "id": 35,
         "title": "Ethyrial: Echoes of Yore",
-        "thumbnail": "",
+        "thumbnail": "/storage/thumbnails/Ethyrial Echoes of Yore/thumbnail.jpg",
         "short_description": "An \"old school MMORPG\" that pays tribute to those that came before it.",
         "description": "<p style=\"text-align: justify;\">Ethyrial: Echoes of Yore, developed (and now published) by Gellyberry Studios is a free-to-play MMORPG that dips its toes into the old-school waters of games like RuneScape. With a bit of an \"acquired taste\" art style, Eythrial challenges players to survive in a world ravaged by civil war.</p>\n<p style=\"text-align: justify;\">You'll be walking (slowly) around the world trying to team up with others (almost required) and working your stats (yes, they actually matter here), all in an effort to rebuild the world, literally. There is no instanced player housing here. Get materials, craft weapons, and stake a claim to land right in the world to call home.</p>\n<p style=\"text-align: justify;\">Featuring both PvE and PvP content, including open world PvP where yes, you can lose your loot unless you have a friend grab it, Ethyrial wants to be your replacement for games gone by.</p>\n<p style=\"text-align: justify;\">Currently the game is undergoing a drastic number of changes to model, publisher, staff, and more. This results in the devs being rather forthright in saying that updates will be few and far between during this transition, so stay tuned to the game's site for updates on future content.</p>",
         "genre": "MMORPG",
@@ -883,9 +883,9 @@
             "storage": "20 GB available space"
         },
         "screenshots": [
-            null,
-            null,
-            null
+            "/storage/thumbnails/Ethyrial Echoes of Yore/ethyrial-echoes-of-yore-1.jpg",
+            "/storage/thumbnails/Ethyrial Echoes of Yore/ethyrial-echoes-of-yore-2.jpg",
+            "/storage/thumbnails/Ethyrial Echoes of Yore/ethyrial-echoes-of-yore-3.jpg"
         ],
         "created_at": "2025-12-05 20:05:32",
         "updated_at": "2025-12-05 20:05:32"
@@ -893,7 +893,7 @@
     {
         "id": 36,
         "title": "Summoners War: Chronicles",
-        "thumbnail": "",
+        "thumbnail": "/storage/thumbnails/Summoners War Chronicles/thumbnail.jpg",
         "short_description": "Discover the secrets of the Rahil Kingdom in this reimagined version of Summoners War",
         "description": "<p style=\"text-align: justify;\">Whether it's on PC or on mobile, Com2uS brings you Summoners War: Chronicles, a reimagined Summoners War with updated systems, stories, graphics, and more. </p>\n<p style=\"text-align: justify;\">Pick from one of 3 \"Summoners\" and journey through the Rahil Kingdom fighting and looting your way to power in this free-to-play MMORPG. Along the way you'll be exploring a large world, fighting your way through dungeons, hitting up the arena for PvP against your friends, and collecting some of the monsters you fight so they'll fight alongside you.</p>\n<p style=\"text-align: justify;\">With over 350 monsters to collect and an action-based combat system, Summoners War: Chronicles challenges you to save the world by beating back the darkness seeping through rifts. Should you fail, the continents of the world will lay in ruin.</p>",
         "genre": "MMORPG",
@@ -909,9 +909,9 @@
             "storage": "10 GB available space"
         },
         "screenshots": [
-            null,
-            null,
-            null
+            "/storage/screenshots/Summoners War Chronicles/summoners-war-chronicles-1.jpg",
+            "/storage/screenshots/Summoners War Chronicles/summoners-war-chronicles-2.jpg",
+            "/storage/screenshots/Summoners War Chronicles/summoners-war-chronicles-3.jpg"
         ],
         "created_at": "2025-12-05 20:06:42",
         "updated_at": "2025-12-05 20:06:42"

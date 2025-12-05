@@ -1,44 +1,4 @@
 
-Fetching details for: Hero Wars: Dominion Era
-Failed to download image: https://www.mmobomb.com/g/1218/thumbnail.jpg
-
-Fetching details for: Star Wars: The Old Republic
-Failed to download image: https://www.mmobomb.com/g/257/thumbnail.jpg
-Failed to download image: https://www.mmobomb.com/g/257/Star-Wars-The-Old-Republic-1.jpg
-Failed to download image: https://www.mmobomb.com/g/257/Star-Wars-The-Old-Republic-2.jpg
-Failed to download image: https://www.mmobomb.com/g/257/Star-Wars-The-Old-Republic-3.jpg
-Failed to download image: https://www.mmobomb.com/g/257/Star-Wars-The-Old-Republic-4.jpg
-
-Fetching details for: Blue Protocol: Star Resonance
-Failed to download image: https://www.mmobomb.com/g/1220/thumbnail.jpg
-Failed to download image: https://www.mmobomb.com/g/1220/blue-protocol-1.jpg
-Failed to download image: https://www.mmobomb.com/g/1220/blue-protocol-2.jpg
-Failed to download image: https://www.mmobomb.com/g/1220/blue-protocol-3.jpg
-
-Fetching details for: Odin: Valhalla Rising
-Failed to download image: https://www.mmobomb.com/g/1202/thumbnail.jpg
-Failed to download image: https://www.mmobomb.com/g/1202/odin-valhalla-rising-1.jpg
-Failed to download image: https://www.mmobomb.com/g/1202/odin-valhalla-rising-2.jpg
-Failed to download image: https://www.mmobomb.com/g/1202/odin-valhalla-rising-3.jpg
-
-Fetching details for: Sky: Children of the Light
-Failed to download image: https://www.mmobomb.com/g/1186/thumbnail.jpg
-Failed to download image: https://www.mmobomb.com/g/1186/sky-1.jpg
-Failed to download image: https://www.mmobomb.com/g/1186/sky-2.jpg
-Failed to download image: https://www.mmobomb.com/g/1186/sky-3.jpg
-
-Fetching details for: Ethyrial: Echoes of Yore
-Failed to download image: https://www.mmobomb.com/g/1157/thumbnail.jpg
-Failed to download image: https://www.mmobomb.com/g/1157/ethyrial-echoes-of-yore-1.jpg
-Failed to download image: https://www.mmobomb.com/g/1157/ethyrial-echoes-of-yore-2.jpg
-Failed to download image: https://www.mmobomb.com/g/1157/ethyrial-echoes-of-yore-3.jpg
-
-Fetching details for: Summoners War: Chronicles
-Failed to download image: https://www.mmobomb.com/g/1147/thumbnail.jpg
-Failed to download image: https://www.mmobomb.com/g/1147/summoners-war-chronicles-1.jpg
-Failed to download image: https://www.mmobomb.com/g/1147/summoners-war-chronicles-2.jpg
-Failed to download image: https://www.mmobomb.com/g/1147/summoners-war-chronicles-3.jpg
-
 Fetching details for: Torchlight: Infinite
 Failed to download image: https://www.mmobomb.com/g/1137/thumbnail.jpg
 Failed to download image: https://www.mmobomb.com/g/1137/torchlight-infinite-1.jpg
