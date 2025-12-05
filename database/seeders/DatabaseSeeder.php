@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\ArticleComment;
 use App\Models\ArticleImage;
 use App\Models\User;
+use App\Models\UserProfile;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -25,7 +26,13 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin@example.com'),
         ]);
 
-        User::factory(10)->create();
+        $numUsers = 10;
+        User::factory($numUsers)->create();
+        for ($i = 0; $i < $numUsers + 1; $i++) {
+            $profile = UserProfile::factory()->create([
+                'user_id' => $i,
+            ]);
+        }
 
         for ($i = 0; $i < 32; $i++) {
             Article::factory()->create([
