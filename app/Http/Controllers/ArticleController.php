@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
-require base_path('app/Http/Controllers/_ArticleControllerUtils.php');
+
 
 class ArticleController extends Controller
 {
@@ -29,19 +29,56 @@ class ArticleController extends Controller
             ->withCount('comments'); // only add full comment count
 
         // apply search text and sorting parameters
-        if ($search) {
-            $query = applySearch($query, $search);
+        if ($request->filled('search')) {
+            $query->search($search);
         }
-        $query = applySorting($query, $sortBy);
+        
+        if($request->filled('sortBy')) {
+            switch($sortBy) {
+                case 'newest': {
+                    $query->sortByNewest();
+                    break;
+                }
+                case 'oldest': {
+                    $query->sortByOldest();
+                    break;
+                }
+                case 'title_asc': {
+                    $query->sortByTitleAsc();
+                    break;
+                }
+                case 'title_desc': {
+                    $query->sortByTitleDesc();
+                    break;
+                }
+                case 'author': {
+                    $query->sortByAuthor();
+                    break;
+                }
+                case 'most_commented': {
+                    $query->sortByComments();
+                    break;
+                }
+                case 'read_time_short': {
+                    $query->sortByReadTimeShort();
+                    break;
+                }
+                case 'read_time_long': {
+                    $query->sortByReadTimeLong();
+                    break;
+                }
+            }
+        }
+
         $articles = $query->paginate($perPage); // paginate current collection after search queries
 
-        // calculate read_time on collection (so we skip a DB query: for performance)
+        // calculate read_time on collection
+        // TODO: Make this a db field instead that's auto calculated on store.
         $articles->getCollection()->transform(function ($article) {
-            $article->read_time = calculateReadTime($article->content);
-
+            $article->read_time = $article->calculateReadTime();
             return $article;
         });
-
+        
         return Inertia::render('Welcome', [
             'articles' => $articles,
             'filters' => [
