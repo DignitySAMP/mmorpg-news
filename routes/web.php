@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,3 +21,6 @@ Route::get('/user/profile', [ProfileController::class, 'update'])->name('profile
 Route::patch('/user/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::get('/user/profile/account', fn () => Inertia::render('Fortify/UpdateProfileInformation'))->middleware('auth')->name('profile.account');
 Route::get('/user/profile/password', fn () => Inertia::render('Fortify/UpdatePasswordForm'))->middleware('auth')->name('profile.password');
+
+
+Route::resource('game', GameController::class);
