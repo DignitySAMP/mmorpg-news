@@ -1,14 +1,20 @@
 <template>
-    <main
-        class="container mx-auto min-h-screen max-w-4xl divide-y divide-neutral-300 bg-neutral-100 px-4 py-2 text-neutral-700"
-    >
-        <div v-if="user !== null && user.email_verified_at === null">
-            You have not verified your e-mail yet. The application will be
-            locked until you do so.
-        </div>
+    <div class="h-full min-h-screen w-full min-w-screen bg-stone-800">
+        <header class="mx-6 rounded-md bg-leather-900 px-4 py-2 shadow-md">
+            Header
+        </header>
 
-        <slot />
-    </main>
+        <main
+            class="container mx-auto min-h-screen max-w-4xl divide-y divide-neutral-300 bg-neutral-100 px-4 py-2 text-neutral-700"
+        >
+            <div v-if="user !== null && user.email_verified_at === null">
+                You have not verified your e-mail yet. The application will be
+                locked until you do so.
+            </div>
+
+            <slot />
+        </main>
+    </div>
 </template>
 <script setup lang="ts">
 import { usePage } from '@inertiajs/vue3';

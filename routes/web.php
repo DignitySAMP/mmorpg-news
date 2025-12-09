@@ -24,3 +24,5 @@ Route::get('/user/profile/password', fn () => Inertia::render('Fortify/UpdatePas
 
 
 Route::resource('game', GameController::class);
+
+Route::get('test', fn() => Inertia::render('Test'))->name('test');

@@ -9,9 +9,8 @@
     @inertiaHead
 </head>
 
-<body class="antialiased">
+<body class="antialiased bg-black">
     @inertia
 </body>
 
 </html>
-

@@ -11,4 +11,16 @@
         'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
+
+    --color-leather-50: #f6f5f0;
+    --color-leather-100: #eae3d7;
+    --color-leather-200: #d6c9b2;
+    --color-leather-300: #bea886;
+    --color-leather-400: #ab8c64;
+    --color-leather-500: #9c7a56;
+    --color-leather-600: #8f6a4d;
+    --color-leather-700: #6c4d3c;
+    --color-leather-800: #5c4237;
+    --color-leather-900: #503a33;
+    --color-leather-950: #2d1f1b;
 }
